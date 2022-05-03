@@ -265,5 +265,8 @@ PRODUCT_COPY_FILES += \
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/mt6768-common/mt6768-common-vendor.mk)
 
+# Enable USE_OPENGL_RENDERER
+USE_OPENGL_RENDERER := true
+
 # Enable PERF_ANIM_OVERRIDE | Reduce lag
 PERF_ANIM_OVERRIDE := true
