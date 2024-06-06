@@ -65,6 +65,7 @@ BOARD_KERNEL_CMDLINE := bootopt=64S3,32N2,64N2
 BOARD_KERNEL_CMDLINE += androidboot.serialconsole=0
 BOARD_KERNEL_CMDLINE += nodebugmon
 BOARD_KERNEL_CMDLINE += noirqdebug
+BOARD_KERNEL_CMDLINE += cgroup.memory=nokmem,nosocket
 
 # Kernel
 TARGET_KERNEL_ARCH := arm64
