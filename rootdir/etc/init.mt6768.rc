@@ -997,7 +997,19 @@ on property:sys.boot_completed=1
 # initialize powerHAL when boot is completed
 on property:sys.boot_completed=1
     setprop vendor.powerhal.init 1
-
+    
+    chown system system /sys/devices/system/cpu/cpufreq/mtk/lcluster_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpufreq/mtk/lcluster_max_freq
+    
+    chown system system /sys/devices/system/cpu/cpufreq/mtk/lcluster_min_freq
+    chmod 0664 /sys/devices/system/cpu/cpufreq/mtk/lcluster_min_freq
+    
+    chown system system /sys/devices/system/cpu/cpufreq/mtk/bcluster_max_freq
+    chmod 0664 /sys/devices/system/cpu/cpufreq/mtk/bcluster_max_freq
+    
+    chown system system /sys/devices/system/cpu/cpufreq/mtk/bcluster_min_freq
+    chmod 0664 /sys/devices/system/cpu/cpufreq/mtk/bcluster_min_freq
+    
 on property:sys.boot_completed=1
     restart android-hardware-media-c2-hal-1-2
 
