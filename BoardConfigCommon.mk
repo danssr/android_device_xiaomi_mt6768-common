@@ -92,7 +92,13 @@ BOARD_SUPER_PARTITION_GROUPS := main
 BOARD_MAIN_PARTITION_LIST := system system_ext vendor product
 
 # Reserve space for gapps install
+ifeq ($(PRODUCT_NAME),infinity_lancelot)
+-include vendor/infinity/config/BoardConfigReservedSize.mk
+else ifeq ($(PRODUCT_NAME),infinity_merlinx)
+-include vendor/infinity/config/BoardConfigReservedSize.mk
+else
 -include vendor/lineage/config/BoardConfigReservedSize.mk
+endif
 
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
