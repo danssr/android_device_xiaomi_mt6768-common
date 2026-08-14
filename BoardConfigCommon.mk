@@ -92,7 +92,11 @@ BOARD_SUPER_PARTITION_GROUPS := main
 BOARD_MAIN_PARTITION_LIST := system system_ext vendor product
 
 # Reserve space for gapps install
+ifneq ($(filter infinity_%,$(PRODUCT_NAME)),)
+-include vendor/infinity/config/BoardConfigReservedSize.mk
+else
 -include vendor/lineage/config/BoardConfigReservedSize.mk
+endif
 
 BOARD_VENDORIMAGE_FILE_SYSTEM_TYPE := ext4
 BOARD_PRODUCTIMAGE_FILE_SYSTEM_TYPE := ext4
