@@ -80,6 +80,7 @@ ro.zram.mark_idle_delay_mins=60
 ro.zram.first_wb_delay_mins=1440
 ro.zram.periodic_wb_delay_hours=24
 
-# SkiaGL Threaded
+# RenderEngine & HWUI
 debug.renderengine.backend=skiaglthreaded
+debug.renderengine.blur_algorithm=kawase2
 debug.hwui.renderer=skiagl
