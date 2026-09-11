@@ -88,13 +88,11 @@ debug.renderengine.backend=skiaglthreaded
 debug.hwui.renderer=skiagl
 renderthread.skia.reduceopstasksplitting=true
 
-# RAM
-ro.config.fha_enable=true
-ro.sys.fw.bg_apps_limit=32
-ro.config.dha_cached_max=16
-ro.config.dha_empty_max=42
-ro.config.dha_empty_init=32
-ro.config.dha_lmk_scale=0.545
-ro.config.dha_th_rate=2.3
-ro.config.sdha_apps_bg_max=64
-ro.config.sdha_apps_bg_min=8
+# lmkd: without ro.config.low_ram, lmkd takes DEF_THRASHING=100, so it does not
+# treat the system as thrashing until the refault ratio reaches 100%. In
+# practice that means seconds of heavy swapping, with system_server locks held
+# and the UI frozen, before anything is killed. 30 is the value AOSP applies to
+# memory constrained devices (DEF_THRASHING_LOWRAM).
+ro.lmk.thrashing_limit=30
+# React when less than 20% of zram is free instead of the 10% default
+ro.lmk.swap_free_low_percentage=20
