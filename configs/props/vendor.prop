@@ -78,7 +78,7 @@ ro.vendor.mtk_widevine_drm_l1_support=1
 ro.vendor.mtk_sec_video_path_support=1
 
 # Data
-ro.vendor.mtk_f2fs_enable=0
+ro.vendor.mtk_f2fs_enable=1
 ro.vendor.mtk_fd_support=1
 ro.vendor.mtk_emmc_support=1
 ro.crypto.allow_encrypt_override=true
